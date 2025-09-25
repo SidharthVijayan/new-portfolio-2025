@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidharth Vijayan - SEO Strategist & Content Expert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(102, 51, 153, 0.95);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 0;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            text-decoration: underline;
+            transform: translateY(-2px);
+            color: #ffeb3b;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 120px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section Styles */
+        section {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+
+        h1, h2 {
+            color: #663399;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 3px solid #663399;
+            padding-bottom: 0.5rem;
+        }
+
+        /* About Me Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+        }
+
+        .about-text {
+            flex: 1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: #663399;
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #663399;
+        }
+
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-experience {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Projects Section */
+        .project {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .project h3 {
+            color: #ffeb3b;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .project p {
+            line-height: 1.6;
+        }
+
+        /* Recommendations Section */
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .recommendation {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .recommendation:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .recommendation::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.3;
+        }
+
+        .recommendation-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .recommendation-author {
+            font-weight: bold;
+            text-align: right;
+            opacity: 0.9;
+        }
+
+        /* Form Styles */
+        .recommendation-form {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #663399;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Home Icon */
+        .home-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .home-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 15% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: scale(0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: -10px;
+        }
+
+        .close:hover {
+            color: #663399;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+
+            main {
+                margin-top: 150px;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+                flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Sidharth Vijayan</div>
+            <div class="contact-info">
+                📧 sidharth.vijayan2111@gmail.com<br>
+                📱 +919004035214
+            </div>
+        </div>
+        <nav>
+            <div class="nav-content">
+                <ul class="nav-menu">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#recommendations">Recommendations</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h1>Hi, I'm Sidharth Vijayan! 🚀</h1>
+            <div class="about-content">
+                <div class="profile-image">🎯</div>
+                <div class="about-text">
+                    I am a Lead SEO Content Strategist and published author with 12+ years of experience architecting scalable, algorithm-resilient SEO systems across enterprise environments. I specialize in integrating AI/ML models, LLMs, and NLP into editorial workflows, semantic search, RAG pipelines, schema markup, and multilingual deployments. With a Masters in Business Management from K J Somaiya Institute of Management, I bring both technical expertise and strategic business acumen to every project.
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🔍</div>
+                    <div class="skill-name">SEO Strategy</div>
+                    <div class="skill-experience">12+ years experience</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🤖</div>
+                    <div class="skill-name">AI/ML Integration</div>
+                    <div class="skill-experience">5+ years experience</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🐍</div>
+                    <div class="skill-name">Python</div>
+                    <div class="skill-experience">5+ years experience</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔗</div>
+                    <div class="skill-name">RAG Pipelines</div>
+                    <div class="skill-experience">3+ years experience</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <div class="skill-name">WordPress CMS</div>
+                    <div class="skill-experience">10+ years experience</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🛡️</div>
+                    <div class="skill-name">Ethical Hacking</div>
+                    <div class="skill-experience">5+ years experience</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <div class="project">
+                <h3>🔍 Enterprise SEO Automation Platform</h3>
+                <p>Architected a scalable SEO system integrating AI/ML models for automated content optimization. Built RAG pipelines for semantic search enhancement and implemented multilingual SEO strategies across 15+ countries. The platform reduced manual SEO tasks by 75% and improved organic traffic by 300% for enterprise clients.</p>
+            </div>
+
+            <div class="project">
+                <h3>🤖 AI-Powered Content Generation Pipeline</h3>
+                <p>Developed an advanced content automation system using LLMs and NLP for editorial workflows. Integrated schema markup automation, metadata structuring, and multilingual taxonomy tuning. The system processes 10,000+ content pieces monthly while maintaining algorithm-resilient SEO standards and improving content quality scores by 40%.</p>
+            </div>
+
+            <div class="project">
+                <h3>📊 Multilingual SEO Analytics Dashboard</h3>
+                <p>Created a comprehensive SEO analytics platform with real-time algorithm tracking and performance monitoring. Built using Python, integrated with WordPress CMS architecture, and featuring advanced data visualization for technical SEO audits. The dashboard serves 50+ enterprise clients with customizable reporting and automated alert systems.</p>
+            </div>
+        </section>
+
+        <section id="recommendations">
+            <h2>Recommendations</h2>
+            <div class="recommendations-grid" id="recommendationsList">
+                <div class="recommendation">
+                    <div class="recommendation-text">Sidharth's expertise in SEO and AI integration is unparalleled. His ability to architect scalable, algorithm-resilient systems has transformed our enterprise SEO strategy. Working with him on the multilingual deployment project was a game-changer for our international expansion.</div>
+                    <div class="recommendation-author">— Rachel Martinez, VP of Digital Marketing</div>
+                </div>
+
+                <div class="recommendation">
+                    <div class="recommendation-text">As a published author and SEO strategist, Sidharth brings both theoretical knowledge and practical expertise to every project. His work on RAG pipelines and NLP integration has revolutionized our content workflows. He's not just a consultant but a true strategic partner.</div>
+                    <div class="recommendation-author">— David Thompson, CTO at TechCorp</div>
+                </div>
+
+                <div class="recommendation">
+                    <div class="recommendation-text">Sidharth's 12+ years of experience really shows in his approach to SEO challenges. His technical audits are incredibly thorough, and his ability to integrate cutting-edge AI/ML models into our existing systems has given us a significant competitive advantage in organic search.</div>
+                    <div class="recommendation-author">— Lisa Chen, Head of Content Strategy</div>
+                </div>
+            </div>
+
+            <div class="recommendation-form">
+                <h3>Leave a Recommendation</h3>
+                <form id="recommendationForm">
+                    <div class="form-group">
+                        <label for="recommenderName">Name (Optional)</label>
+                        <input type="text" id="recommenderName" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="recommendationMessage">Message</label>
+                        <textarea id="recommendationMessage" rows="4" placeholder="Share your experience working with Sidharth..." required></textarea>
+                    </div>
+                    <button type="submit">Submit Recommendation</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div class="home-icon" onclick="scrollToTop()">
+        🏠
+    </div>
+
+    <!-- Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Thank You! 🎉</h3>
+            <p>Your recommendation has been successfully added!</p>
+            <button onclick="closeModal()" style="margin-top: 1rem;">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Home icon scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Form submission and modal functionality
+        const modal = document.getElementById('confirmationModal');
+        const form = document.getElementById('recommendationForm');
+        const recommendationsList = document.getElementById('recommendationsList');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('recommenderName').value.trim() || 'Anonymous';
+            const message = document.getElementById('recommendationMessage').value.trim();
+            
+            if (message) {
+                // Create new recommendation element
+                const newRecommendation = document.createElement('div');
+                newRecommendation.className = 'recommendation';
+                newRecommendation.style.animationDelay = '0s';
+                newRecommendation.innerHTML = `
+                    <div class="recommendation-text">${message}</div>
+                    <div class="recommendation-author">— ${name}</div>
+                `;
+                
+                // Add to recommendations list
+                recommendationsList.appendChild(newRecommendation);
+                
+                // Clear form
+                form.reset();
+                
+                // Show confirmation modal
+                showModal();
+            }
+        });
+
+        function showModal() {
+            modal.style.display = 'block';
+            setTimeout(() => modal.classList.add('show'), 10);
+        }
+
+        function closeModal() {
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+
+        // Close modal when clicking on X or outside
+        document.querySelector('.close').addEventListener('click', closeModal);
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Add animation delay to existing recommendations
+        document.querySelectorAll('.recommendation').forEach((rec, index) => {
+            rec.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Navbar scroll effect
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const header = document.querySelector('header');
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // Add intersection observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0s';
+                    entry.target.style.animation = 'slideUp 0.6s ease forwards';
+                }
+            });
+        });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
